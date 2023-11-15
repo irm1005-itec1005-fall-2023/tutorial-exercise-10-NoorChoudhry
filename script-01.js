@@ -55,23 +55,57 @@ const pokemons = [
 
 // 1. Display the Pokemons that have a level between 30 and 50
 
+for (let index = 0; index < pokemons.length; index++) {
+  if (pokemons[index].level >= 30 && pokemons[index].level <= 50) {
+    console.log(pokemons[index].name)
+  }
+}
 
 // 2. Display the pokemons that have an ability called "Run Away"
+console.log("- - - NEXT STEP - - -")
 
+for (let index = 0; index < pokemons.length; index++) {
+  for (let j = 0; j < pokemons.length; j++)
+    if (pokemons[index].abilities[j] === 'Run Away') {
+      console.log(pokemons[index].name)
+  }
+}
 
 // 3. Display how many Pokemons have the type "Normal"
+console.log("- - - NEXT STEP - - -")
 
+for (let index = 0; index < pokemons.length; index++)
+
+/*
+let normalCount = 0;
+for (let i = 0; i < pokemons.length; i++) {
+  if (pokemons[i].type === 'Normal') {
+    normalCount++;
+  }
+}
+console.log(normalCount);
+ */
 
 // 4. Display the names of all of pokemons that have a type of "Psychic"
+console.log("- - - NEXT STEP - - -")
 
+for (let index = 0; index < pokemons.length; index++)
+
+/*
+for (let i = 0; i < pokemons.length; i++) {
+  if (pokemons[i].type === 'Psychic') {
+    console.log(pokemons[i].name);
+  }
+}
+*/
 
 // 5. Display the types of Pokemon and the number of Pokemons that have that type
+console.log("- - - NEXT STEP - - -")
 //   Example:
 //   Psychic - 2,
 //   Normal - 3, etc.
 
 // Create an array of all the types
 // eg: { type: 'Normal', count: 3 }
-
 
 // Display the results
