@@ -62,7 +62,8 @@ for (let index = 0; index < pokemons.length; index++) {
 }
 
 // 2. Display the pokemons that have an ability called "Run Away"
-console.log("- - - NEXT STEP - - -")
+
+console.log("- - - NEXT STEP (2) - - -")
 
 for (let index = 0; index < pokemons.length; index++) {
   for (let j = 0; j < pokemons.length; j++)
@@ -72,35 +73,46 @@ for (let index = 0; index < pokemons.length; index++) {
 }
 
 // 3. Display how many Pokemons have the type "Normal"
-console.log("- - - NEXT STEP - - -")
+
+console.log("- - - NEXT STEP (3) - - -")
 
 for (let index = 0; index < pokemons.length; index++)
-
-/*
-let normalCount = 0;
-for (let i = 0; i < pokemons.length; i++) {
-  if (pokemons[i].type === 'Normal') {
-    normalCount++;
+  if (pokemons[index].type === 'Normal') {
+    console.log(pokemons[index].name)
   }
-}
-console.log(normalCount);
- */
 
 // 4. Display the names of all of pokemons that have a type of "Psychic"
-console.log("- - - NEXT STEP - - -")
+
+console.log("- - - NEXT STEP (4) - - -")
 
 for (let index = 0; index < pokemons.length; index++)
-
-/*
-for (let i = 0; i < pokemons.length; i++) {
-  if (pokemons[i].type === 'Psychic') {
-    console.log(pokemons[i].name);
+  if (pokemons[index].type === 'Psychic') {
+    console.log(pokemons[index].name)
   }
-}
-*/
 
 // 5. Display the types of Pokemon and the number of Pokemons that have that type
-console.log("- - - NEXT STEP - - -")
+
+console.log("- - - NEXT STEP (5) - - -")
+
+let typesCount = [];
+
+for (let index = 0; index < pokemons.length; index++) {
+  let type = pokemons[index].type;
+  let typeExists = false;
+
+  for (let j = 0; j < typesCount.length; j++) {
+    if (typesCount[j].type === type) {
+      typeExists = true;
+      typesCount[j].count++;
+    }
+  }
+
+  if (!typeExists) {
+    typesCount.push({ type: type, count: 1 });
+  }
+
+}
+
 //   Example:
 //   Psychic - 2,
 //   Normal - 3, etc.
@@ -109,3 +121,7 @@ console.log("- - - NEXT STEP - - -")
 // eg: { type: 'Normal', count: 3 }
 
 // Display the results
+
+for (let i = 0; i < typesCount.length; i++) {
+  console.log(`${typesCount[i].type} - ${typesCount[i].count}`);
+}
